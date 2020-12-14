@@ -97,6 +97,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerItemEstimate:{
     backgroundColor: theme.palette.common.orange
+  },
+  appbar:{
+    zIndex: theme.zIndex.modal + 1
   }
 }));
 
@@ -257,10 +260,11 @@ const Header = () => {
         anchorEl={anchorEl}
         open={openMenu}
         onClose={handleClose}
+        style={{zIndex: 1302}}
       >
         {menuOptions.map((option, i) => (
           <MenuItem
-            key={option}
+            key={`${option}${i}`}
             component={Link}
             to={option.link}
             classes={{ root: classes.menuItem }}
@@ -288,6 +292,7 @@ const Header = () => {
         disableDiscovery={iOS}
         classes={{paper: classes.drawer}}
       >
+        <div className={classes.toolbarMargin} />
         <List disablePadding>
           <ListItem selected={value === 0} onClick={() => {setOpenDrawer(false); setValue(0)}} divider button component={Link} to="/">
             <ListItemText className={value === 0 ? [classes.drawerItemSelectedStyle, classes.draweritem] : classes.draweritem} disableTypography>Home</ListItemText>
@@ -327,7 +332,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar position="fixed">
+        <AppBar position="fixed" className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
               disableRipple

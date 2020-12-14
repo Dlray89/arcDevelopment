@@ -1,4 +1,4 @@
-import Header from '../components/UI/Header'
+  import Header from '../components/UI/Header'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from '../components/UI/theme'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
