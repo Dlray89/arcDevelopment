@@ -154,9 +154,10 @@ const Header = (props) => {
   ];
 
   useEffect(() => {
+    const prop = props
     switch (window.location.pathname) {
       case "/":
-        if (props.value !== 0) {
+        if (prop.value !== 0) {
           props.setValue(0);
         }
         break;
@@ -207,7 +208,7 @@ const Header = (props) => {
       default:
         break;
     }
-  }, [props.value]);
+  });
 
   const tabs = (
     <React.Fragment>
