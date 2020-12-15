@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import { makeStyles, Grid, Hidden } from "@material-ui/core";
 import footerAdornment from "../../assets/Footer Adornment.svg";
 import { Link } from 'react-router-dom'
@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = (props) => {
   const classes = useStyles();
+  const wrapper = createRef()
   return (
     <footer className={classes.footer}>
         <Hidden mdDown>
@@ -128,13 +129,13 @@ const Footer = (props) => {
       />
 
       <Grid container spacing={2} justify='flex-end' className={classes.socialContainer}>
-          <Grid item component={"a"} href='http://www.facebook.com' rel='no-opener noreferrer' target='_blank'>
+          <Grid item component={"a"} href='http://www.facebook.com' rel='no-opener noreferrer' ref={wrapper} target='_blank'>
               <img className={classes.icon}  alt='facebook icon' src={FB}  />
           </Grid>
-          <Grid item component={"a"} href='http://www.twitter.com' rel='no-opener noreferrer' target='_blank'>
+          <Grid item component={"a"} href='http://www.twitter.com' rel='no-opener noreferrer' ref={wrapper} target='_blank'>
               <img className={classes.icon}  alt='twitter icon' src={Twitter}  />
           </Grid>
-          <Grid item component={"a"} href='http://www.instagram.com' rel='no-opener noreferrer' target='_blank'>
+          <Grid item component={"a"} href='http://www.instagram.com' rel='no-opener noreferrer' ref={wrapper} target='_blank'>
               <img className={classes.icon} alt='instagram' src={Instagram} />
           </Grid>
 
