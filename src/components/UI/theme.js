@@ -44,9 +44,8 @@ export default createMuiTheme({
     },
     h4: {
       fontFamily: "Raleway",
-      fontSize: "1.75rem",
+      fontSize: "2.5rem",
       color: dapBlue,
-      fontWeight: 700,
     },
     subtitle1: {
       fontSize: "1.25rem",
