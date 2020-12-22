@@ -1,4 +1,4 @@
-import React from "react";
+import React, {createRef } from "react";
 import Lottie from "react-lottie";
 import {
   makeStyles,
@@ -123,6 +123,7 @@ const LandingPage = () => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const ref = createRef()
 
   const defaultOptions = {
     loop: true,
@@ -198,7 +199,7 @@ const LandingPage = () => {
               textAlign: matchesSM ? "center" : undefined,
             }}
           >
-            <Typography variant="h4">Custom Software Development</Typography>
+            <Typography  variant="h4">Custom Software Development</Typography>
             <Typography className={classes.subtitle} variant="subtitle1">
               Save Energy. Save Time. Save Money.
             </Typography>
@@ -213,6 +214,7 @@ const LandingPage = () => {
                 width={10}
                 height={10}
                 fill={theme.palette.common.blue}
+                
               />
             </Button>
           </Grid>
@@ -221,6 +223,7 @@ const LandingPage = () => {
               className={classes.icon}
               alt="custome software icon"
               src={CustomSoftwareIcon}
+              ref={ref}
             />
           </Grid>
         </Grid>
@@ -246,7 +249,7 @@ const LandingPage = () => {
               {matchesSM ? null : <br />} with either mobile platform{" "}
             </Typography>
             <Button variant="outlined" className={classes.learnButton}>
-              <span style={{ marginRight: 10 }}> Learn More</span>
+              <span ref={ref} style={{ marginRight: 10 }}> Learn More</span>
               <ButtonArrow
                 width={10}
                 height={10}
@@ -259,6 +262,7 @@ const LandingPage = () => {
               className={classes.icon}
               alt="iOS/Android icon"
               src={MobilesAppsIcons}
+              ref={ref}
             />
           </Grid>
         </Grid>
@@ -273,6 +277,7 @@ const LandingPage = () => {
           direction="row"
           justify={matchesSM ? "center" : undefined}
           className={classes.serviceContainer}
+          
         >
           <Grid
             item
@@ -290,7 +295,7 @@ const LandingPage = () => {
               Optimized for search engines built for speed.
             </Typography>
             <Button variant="outlined" className={classes.learnButton}>
-              <span style={{ marginRight: 10 }}> Learn More</span>
+              <span ref={ref} style={{ marginRight: 10 }}> Learn More</span>
               <ButtonArrow
                 width={10}
                 height={10}
@@ -303,6 +308,7 @@ const LandingPage = () => {
               className={classes.icon}
               alt="Websit edevelopment icon"
               src={WebsiteIcon}
+              ref={ref}
             />
           </Grid>
         </Grid>
@@ -323,7 +329,7 @@ const LandingPage = () => {
                     Visionary insight coupled with cutting-edge technology is a recipe for revolution
                 </Typography>
                 <Button variant="outlined" className={classes.learnButton}>
-              <span style={{ marginRight: 10 }}> Learn More</span>
+              <span ref={ref} style={{ marginRight: 10 }}> Learn More</span>
               <ButtonArrow
                 width={10}
                 height={10}
@@ -334,7 +340,7 @@ const LandingPage = () => {
             </Grid>
           </CardContent>
         </Card>
-        <div className={classes.revolutionBackground} />
+        <div ref={ref} className={classes.revolutionBackground} />
         </Grid>
         
       </Grid>
